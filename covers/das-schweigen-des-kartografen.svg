@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 600" font-family="Georgia, 'Times New Roman', serif">
+  <defs>
+    <radialGradient id="k-glow" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#3a322b"/>
+      <stop offset="100%" stop-color="#211c18"/>
+    </radialGradient>
+    <filter id="k-paper">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.04 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="450" height="600" fill="url(#k-glow)"/>
+  <!-- topographic contours -->
+  <g fill="none" stroke="#a9822f" stroke-width="1.1" opacity="0.75">
+    <path d="M60 210 C 130 160, 210 170, 250 215 C 300 270, 380 250, 420 205" opacity="0.5"/>
+    <path d="M40 250 C 120 190, 220 200, 262 252 C 310 312, 390 288, 440 240" opacity="0.65"/>
+    <path d="M20 292 C 110 222, 232 232, 274 290 C 320 352, 400 328, 450 278" opacity="0.8"/>
+    <path d="M10 336 C 104 258, 244 266, 286 330 C 330 394, 410 370, 452 318"/>
+    <path d="M18 382 C 112 306, 252 312, 296 372 C 338 430, 414 410, 448 362" opacity="0.8"/>
+    <path d="M38 424 C 128 356, 262 358, 306 412 C 344 460, 416 446, 444 404" opacity="0.6"/>
+    <path d="M66 462 C 150 404, 272 402, 314 448 C 348 486, 414 476, 438 442" opacity="0.4"/>
+  </g>
+  <!-- the hidden place: a small red survey cross -->
+  <g stroke="#9e3b34" stroke-width="2.4" opacity="0.95">
+    <line x1="277" y1="318" x2="295" y2="336"/>
+    <line x1="295" y1="318" x2="277" y2="336"/>
+  </g>
+  <circle cx="286" cy="327" r="15" fill="none" stroke="#9e3b34" stroke-width="1" stroke-dasharray="3 3" opacity="0.8"/>
+  <!-- compass rose -->
+  <g transform="translate(374,96)" stroke="#cbb98f" fill="#cbb98f">
+    <circle r="26" fill="none" stroke-width="1" opacity="0.7"/>
+    <circle r="20" fill="none" stroke-width="0.6" opacity="0.45"/>
+    <path d="M0 -24 L4 0 L0 6 L-4 0 Z" stroke="none"/>
+    <path d="M0 24 L4 0 L0 -6 L-4 0 Z" stroke="none" opacity="0.45"/>
+    <text y="-32" text-anchor="middle" font-size="11" stroke="none" fill="#cbb98f" opacity="0.85">N</text>
+  </g>
+  <!-- title block -->
+  <rect x="52" y="58" width="6" height="112" fill="#7c2f2f"/>
+  <text x="76" y="88" font-size="34" fill="#efe6d2" letter-spacing="0.5">Das Schweigen</text>
+  <text x="76" y="128" font-size="34" fill="#efe6d2" letter-spacing="0.5">des Kartografen</text>
+  <text x="77" y="160" font-size="15" font-style="italic" fill="#a9822f" letter-spacing="2">Roman</text>
+  <!-- author -->
+  <line x1="150" y1="524" x2="300" y2="524" stroke="#cbb98f" stroke-width="0.8" opacity="0.6"/>
+  <text x="225" y="552" text-anchor="middle" font-size="19" fill="#e6d9bc" letter-spacing="3">ELENA VOSS</text>
+  <rect width="450" height="600" fill="#000" opacity="0" filter="url(#k-paper)"/>
+</svg>
