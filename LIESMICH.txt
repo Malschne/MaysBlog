@@ -1,0 +1,75 @@
+══════════════════════════════════════════════════════════════════
+  MARGINALIA — Kurzanleitung
+══════════════════════════════════════════════════════════════════
+
+SO ÖFFNEST DU DIE SEITE
+  Einfach die Datei  index.html  doppelklicken — sie öffnet sich im
+  Browser. Kein Internet nötig, alles (auch die Schriften) ist lokal.
+
+──────────────────────────────────────────────────────────────────
+EIN NEUES BUCH EINTRAGEN (das Herzstück!)
+──────────────────────────────────────────────────────────────────
+  1. Öffne die Datei  add-books.js  mit einem Texteditor
+     (Rechtsklick → Öffnen mit → Editor/Notepad — oder noch schöner:
+     der kostenlose Editor „Notepad++" oder „VS Code").
+  2. Ganz oben in der Datei steht eine ausführliche Anleitung mit
+     einer Vorlage zum Kopieren. Vorlage kopieren, oben in die Liste
+     einfügen, Felder ausfüllen, speichern.
+  3. Seite im Browser neu laden (F5). Fertig!
+
+  Das oberste Buch der Liste erscheint groß auf der Startseite.
+  Alternativ bekommt ein Buch mit  hervorheben: true,  den Ehrenplatz.
+
+──────────────────────────────────────────────────────────────────
+EIN COVER-BILD ZU EINEM BUCH HINZUFÜGEN
+──────────────────────────────────────────────────────────────────
+  1. Bild (JPG/PNG, am besten Hochformat, z. B. abfotografiertes
+     Buchcover) in den Ordner  covers/  legen.
+  2. Im Bucheintrag in add-books.js eintragen:
+        bild: "covers/mein-bild.jpg",
+  3. Neu laden. Das Bild erscheint vorn auf dem Buch, auf der
+     Startseite und als Gemälde in der begehbaren Bibliothek.
+
+  Ohne Bild gestaltet die Seite automatisch einen Einband aus
+  Titel und Buchrücken-Farbe — auch schön.
+
+  Die 8 vorhandenen Bilder in covers/ gehören zu den 8 erfundenen
+  Beispielbüchern. Beides darf gelöscht werden, sobald eigene
+  Rezensionen da sind.
+
+──────────────────────────────────────────────────────────────────
+DIE BEGEHBARE BIBLIOTHEK
+──────────────────────────────────────────────────────────────────
+  Über „Bibliothek" im Menü (oder den großen Türen weiter unten)
+  betritt man eine 3D-Galerie mit allen Büchern:
+    Am Computer:  W A S D oder Pfeiltasten = gehen,
+                  Maus gedrückt halten und ziehen = umsehen,
+                  Klick auf ein Buch = Rezension öffnen,
+                  ESC = verlassen.
+    Am Handy:     Finger gedrückt halten = geradeaus gehen,
+                  wischen = umsehen, Buch antippen = öffnen.
+
+──────────────────────────────────────────────────────────────────
+BEVOR DIE SEITE ÖFFENTLICH INS INTERNET GEHT
+──────────────────────────────────────────────────────────────────
+  1. In  impressum.html  und  datenschutz.html  die gestrichelt
+     markierten Felder ([VOR- UND NACHNAME] usw.) ausfüllen.
+  2. Kostenlos veröffentlichen, z. B.:
+     • Netlify Drop (drop.netlify.com): den ganzen BookBriefly-Ordner
+       per Drag & Drop hochziehen — fertig, inkl. Adresse.
+     • GitHub Pages: Ordner in ein Repository laden, in den
+       Einstellungen „Pages" aktivieren.
+     Bei jedem neuen Buch einfach den Ordner erneut hochladen.
+
+──────────────────────────────────────────────────────────────────
+KLEINGEDRUCKTES FÜR DEN SCHENKENDEN ;)
+──────────────────────────────────────────────────────────────────
+  • Die Zeile „für die beste Leserin, mit ♥ gebaut" steht ganz unten
+    in  index.html  (nach „foot-heart" suchen) — nach Belieben
+    anpassen oder mit ihrem Namen versehen.
+  • Nichts an diesem Ordner muss installiert werden; er ist komplett
+    eigenständig. Eine Sicherungskopie ist einfach: Ordner kopieren.
+  • Der ursprüngliche Prototyp (marginalia.html am Desktop) wurde
+    nicht verändert.
+
+Viel Freude beim Verschenken! ♥

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt</title>
+<meta name="robots" content="noindex">
+<script>
+  window.__siteLanguage = localStorage.getItem('siteLanguage') === 'en' ? 'en' : 'de';
+  document.documentElement.lang = window.__siteLanguage;
+</script>
+<link rel="icon" href="logomail.jpeg">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root{
+    --paper:#efe6d2; --card:#f8f2e2; --ink:#2a2420; --ink-soft:#6b5d4c;
+    --ink-faint:#a99d87; --oxblood:#7c2f2f; --rule:rgba(42,36,32,0.18);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;-webkit-font-smoothing:antialiased;
+  }
+  .page{max-width:760px;margin:0 auto;padding:48px 28px 80px;}
+  a{color:var(--oxblood);}
+  .page-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+  .back{
+    display:inline-block;text-decoration:none;color:var(--ink-soft);
+    font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;
+    border-bottom:1px solid var(--rule);padding-bottom:3px;
+  }
+  .back:hover{color:var(--oxblood);border-color:var(--oxblood);}
+  .language-switch{display:flex;align-items:center;gap:8px;}
+  .language-switch .language-sep{color:var(--ink-faint);opacity:0.8;font-size:0.9rem;line-height:1;user-select:none;}
+  .language-switch button{font-size:1rem;line-height:1;background:none;border:none;cursor:pointer;filter:saturate(0.95);transition:transform .18s, filter .18s, opacity .18s;}
+  .language-switch button:hover{transform:translateY(-1px);filter:saturate(1.1);opacity:0.9;}
+  h1{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:2.1rem;margin:0 0 16px;}
+  p{line-height:1.85;font-size:0.98rem;color:var(--ink);margin:0 0 12px;}
+  .card{
+    background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--oxblood);
+    border-radius:4px;padding:20px 22px;margin-top:24px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="page-header">
+    <a class="back" href="index.html" id="backLinkLabel">← Zurück</a>
+    <div class="language-switch" aria-label="Language switcher">
+      <button type="button" aria-label="Deutsch" title="Deutsch">🇦🇹</button>
+      <span class="language-sep" aria-hidden="true">|</span>
+      <button type="button" aria-label="English" title="English">🇬🇧</button>
+    </div>
+  </div>
+  <h1 id="pageTitleLabel">Kontakt</h1>
+  <div id="contactContent"></div>
+</div>
+<script>
+  const pageTitleLabel = document.getElementById('pageTitleLabel');
+  const backLinkLabel = document.getElementById('backLinkLabel');
+  const contactContent = document.getElementById('contactContent');
+  const languageButtons = document.querySelectorAll('.language-switch button');
+
+  const deContent = `
+    <p>Schreib mir gerne, wenn du Fragen zu Auftragsmalereien, Hochzeiten oder meinen Projekten hast.</p>
+    <div class="card">
+      <p><strong>E-Mail:</strong> studio.maypaints@gmail.com</p>
+      <p><strong>Telefon:</strong> folgt noch</p>
+    </div>
+  `;
+
+  const enContent = `
+    <p>Please feel free to write to me if you have any questions about commissioned paintings, weddings, or my projects.</p>
+    <div class="card">
+      <p><strong>E-mail:</strong> studio.maypaints@gmail.com</p>
+      <p><strong>Phone:</strong> to follow</p>
+    </div>
+  `;
+
+  function setLanguage(lang){
+    const isEnglish = lang === 'en';
+    localStorage.setItem('siteLanguage', isEnglish ? 'en' : 'de');
+    document.documentElement.lang = isEnglish ? 'en' : 'de';
+    if(pageTitleLabel) pageTitleLabel.textContent = isEnglish ? 'Contact' : 'Kontakt';
+    if(backLinkLabel) backLinkLabel.innerHTML = isEnglish ? '← Back' : '← Zurück';
+    if(contactContent) contactContent.innerHTML = isEnglish ? enContent : deContent;
+    languageButtons.forEach((button)=>{
+      const active = (isEnglish && button.title === 'English') || (!isEnglish && button.title === 'Deutsch');
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  const austrianFlag = document.querySelector('.language-switch button[title="Deutsch"]');
+  const englishFlag = document.querySelector('.language-switch button[title="English"]');
+  if(austrianFlag) austrianFlag.addEventListener('click', ()=> setLanguage('de'));
+  if(englishFlag) englishFlag.addEventListener('click', ()=> setLanguage('en'));
+
+  setLanguage(window.__siteLanguage || 'de');
+</script>
+</body>
+</html>
